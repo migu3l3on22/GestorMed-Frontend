@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestorMed - Empleados</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <nav>
+        <h2>GestorMed</h2>
+        <div>
+            <a href="empleados.html">Empleados</a>
+            <a href="incapacidades.html">Incapacidades</a>
+            <a href="seguimiento.html">Seguimiento</a>
+            <a href="../index.html">Cerrar sesión</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h2>Gestión de Empleados</h2>
+        <button class="btn-add" onclick="cargarEmpleados()">Actualizar lista</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Documento</th>
+                    <th>Cargo</th>
+                    <th>Área</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-empleados">
+                <tr><td colspan="7">Cargando...</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../assets/js/empleados.js"></script>
+</body>
+</html>

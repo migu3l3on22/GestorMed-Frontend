@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestorMed - Sistema de Gestión de Incapacidades</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>GestorMed</h1>
+            <p>Sistema de Gestión de Incapacidades Médicas</p>
+        </div>
+        <div class="card">
+            <h2>Iniciar Sesión</h2>
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" id="usuario" placeholder="Ingresa tu usuario">
+            </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" id="contrasena" placeholder="Ingresa tu contraseña">
+            </div>
+            <button onclick="login()">Ingresar</button>
+            <p id="error-msg" class="error"></p>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

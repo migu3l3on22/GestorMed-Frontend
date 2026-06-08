@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestorMed - Seguimiento</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <nav>
+        <h2>GestorMed</h2>
+        <div>
+            <a href="empleados.html">Empleados</a>
+            <a href="incapacidades.html">Incapacidades</a>
+            <a href="seguimiento.html">Seguimiento</a>
+            <a href="../index.html">Cerrar sesión</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h2>Seguimiento de Incapacidades</h2>
+        <button class="btn-add" onclick="cargarSeguimientos()">Actualizar lista</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Incapacidad</th>
+                    <th>Fecha</th>
+                    <th>Comentario</th>
+                    <th>Estado</th>
+                    <th>Responsable</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-seguimientos">
+                <tr><td colspan="6">Cargando...</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="../assets/js/seguimiento.js"></script>
+</body>
+</html>
