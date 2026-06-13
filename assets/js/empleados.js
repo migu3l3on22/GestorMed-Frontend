@@ -24,4 +24,31 @@ async function cargarEmpleados() {
     }
 }
 
+async function crearEmpleado() {
+    const data = {
+        nombres: document.getElementById('nombres').value,
+        apellidos: document.getElementById('apellidos').value,
+        documento: document.getElementById('documento').value,
+        correo: document.getElementById('correo').value,
+        telefono: document.getElementById('telefono').value,
+        cargo: document.getElementById('cargo').value,
+        area: document.getElementById('area').value,
+        fecha_ingreso: document.getElementById('fecha_ingreso').value
+    };
+
+    try {
+        const response = await fetch(`${API_EMPLEADOS}/empleados/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const result = await response.json();
+        document.getElementById('msg-empleado').textContent = result.mensaje || 'Registrado';
+        cargarEmpleados();
+    } catch (error) {
+        document.getElementById('msg-empleado').textContent = 'Error al registrar';
+        console.error(error);
+    }
+}
+
 cargarEmpleados();

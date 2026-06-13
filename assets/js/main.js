@@ -3,19 +3,28 @@ const API_EMPLEADOS = 'http://localhost:8002';
 const API_INCAPACIDADES = 'http://localhost:8003';
 const API_SEGUIMIENTO = 'http://localhost:8004';
 
-function login() {
+async function login() {
     const usuario = document.getElementById('usuario').value;
     const contrasena = document.getElementById('contrasena').value;
+    const errorMsg = document.getElementById('error-msg');
 
-    if (usuario === 'admin' && contrasena === 'admin123') {
-        localStorage.setItem('usuario', usuario);
-        localStorage.setItem('rol', 'administrador');
+    try {
+        const response = await fetch(`${API_AUTH}/usuarios/`);
+        const usuarios = await response.json();
+
+        const encontrado = usuarios.find(u => u.usuario === usuario);
+
+        if (!encontrado) {
+            errorMsg.textContent = 'Usuario no encontrado';
+            return;
+        }
+
+        localStorage.setItem('usuario', encontrado.usuario);
+        localStorage.setItem('rol', encontrado.rol);
         window.location.href = 'pages/empleados.html';
-    } else if (usuario === 'gestionhumana' && contrasena === 'gh123') {
-        localStorage.setItem('usuario', usuario);
-        localStorage.setItem('rol', 'gestion_humana');
-        window.location.href = 'pages/empleados.html';
-    } else {
-        document.getElementById('error-msg').textContent = 'Usuario o contraseña incorrectos';
+
+    } catch (error) {
+        errorMsg.textContent = 'Error conectando con el servidor de autenticación';
+        console.error(error);
     }
 }
