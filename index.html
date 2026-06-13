@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GestorMed - Sistema de Gestión de Incapacidades</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <h1>GestorMed</h1>
-            <p>Sistema de Gestión de Incapacidades Médicas</p>
+        <div class="brand-panel">
+            <div class="logo">
+                <h1>GestorMed</h1>
+                <p>Plataforma integral para gestionar incapacidades médicas, seguimiento de casos y bienestar del equipo, todo en un solo lugar.</p>
+            </div>
+            <div class="tagline">Salud y gestión de personal</div>
         </div>
-        <div class="card">
-            <h2>Iniciar Sesión</h2>
-            <div class="form-group">
-                <label>Usuario</label>
-                <input type="text" id="usuario" placeholder="Ingresa tu usuario">
+        <div class="form-panel">
+            <div class="card">
+                <h2>Bienvenido de nuevo</h2>
+                <p>Ingresa tus credenciales para continuar</p>
+                <div class="form-group">
+                    <label>Usuario</label>
+                    <input type="text" id="usuario" placeholder="tu.usuario">
+                </div>
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="contrasena" placeholder="••••••••">
+                </div>
+                <button onclick="login()">Ingresar</button>
+                <p id="error-msg" class="error"></p>
             </div>
-            <div class="form-group">
-                <label>Contraseña</label>
-                <input type="password" id="contrasena" placeholder="Ingresa tu contraseña">
-            </div>
-            <button onclick="login()">Ingresar</button>
-            <p id="error-msg" class="error"></p>
         </div>
     </div>
     <script src="assets/js/main.js"></script>
