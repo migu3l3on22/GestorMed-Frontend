@@ -18,6 +18,39 @@
     </nav>
     <div class="main-content">
         <h2>Seguimiento de Incapacidades</h2>
+
+        <div class="card" style="max-width:600px; margin-bottom:2rem;">
+            <h3>Registrar nuevo seguimiento</h3>
+            <div class="form-group">
+                <label>ID Incapacidad</label>
+                <input type="number" id="incapacidad_id">
+            </div>
+            <div class="form-group">
+                <label>Fecha</label>
+                <input type="date" id="fecha">
+            </div>
+            <div class="form-group">
+                <label>Comentario</label>
+                <input type="text" id="comentario">
+            </div>
+            <div class="form-group">
+                <label>Estado</label>
+                <select id="estado">
+                    <option value="registrada">Registrada</option>
+                    <option value="en_revision">En Revisión</option>
+                    <option value="aprobada">Aprobada</option>
+                    <option value="rechazada">Rechazada</option>
+                    <option value="finalizada">Finalizada</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Usuario Responsable</label>
+                <input type="text" id="usuario_responsable">
+            </div>
+            <button onclick="crearSeguimiento()">Registrar</button>
+            <p id="msg-seguimiento"></p>
+        </div>
+
         <button class="btn-add" onclick="cargarSeguimientos()">Actualizar lista</button>
         <table>
             <thead>
